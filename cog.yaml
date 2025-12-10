@@ -19,6 +19,8 @@ build:
   run:
     # Install vtracer (Rust-based vectorizer)
     - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && export PATH="$HOME/.cargo/bin:$PATH" && cargo install vtracer
+    # Copy vtracer to a standard location so it's always accessible
+    - cp $HOME/.cargo/bin/vtracer /usr/local/bin/vtracer
 
 # predict.py defines how predictions are run on your model
 predict: "predict.py:Predictor"
